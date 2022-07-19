@@ -1,6 +1,8 @@
-const computerChoices = ['Rock', 'Paper', 'Scissors']
+const choices = ["Rock", "Paper", "Scissors"];
 
-function getComputerChoice () {
-    computerChoices[Math.floor(Math.random() * computerChoices.length)];
+function getComputerChoice() {
+    const random = Math.floor(Math.random() * choices.length);
+    console.log(choices[random]);
 }
 
+getComputerChoice();
