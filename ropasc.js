@@ -16,26 +16,26 @@ let computerSelection = getComputerChoice();
 let playerSelection = prompt("Rock, paper, or scissors?").toUpperCase();
 
 function gameRound(playerSelection, computerSelection) {
-    if (playerSelection === "ROCK", computerSelection === "SCISSORS") {
+    console.log(playerSelection, computerSelection)
+    if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
         document.write(scissorsRock, playerWin);
-    } else if (playerSelection === "ROCK", computerSelection === "PAPER") {
+    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         document.write(rockPaper, playerLose);
-    } else if (playerSelection === "ROCK", computerSelection === "ROCK") {
-       document.write(paperScissors, playerTie);
-    } else if (playerSelection === "SCISSORS", computerSelection === "PAPER") {
+    } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+        console.log(playerSelectioncomputerSelection)
         document.write(paperScissors, playerWin);
-    } else if (playerSelection === "SCISSORS", computerSelection === "ROCK") {
-            document.write(paperScissors, playerLose);
-    } else if (playerSelection === "SCISSORS", computerSelection === "SCISSORS") {
-            document.write(paperScissors, playerTie);
-    } else if (playerSelection === "PAPER", computerSelection === "ROCK") {
-            document.write(paperScissors, playerWin);
-    } else if (playerSelection === "PAPER", computerSelection === "SCISSORS") {
-            document.write(paperScissors, playerLose);
-    } else if (playerSelection === "PAPER", computerSelection === "PAPER") {
-            document.write(paperScissors, playerTie);
+    } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
+        document.write(scissorsRock, playerLose);
+    } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
+        document.write(rockPaper, playerWin);
+    } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+        document.write(paperScissors, playerLose);
+    } else if (playerSelection === computerSelection) {
+        document.write(playerTie);
     }
 }
 
-console.log(playerSelection);
-console.log(computerSelection);
+
+document.write('You chose: ' + playerSelection + '. ');
+document.write('Your opponent chose: ' + computerSelection + '. ');
+gameRound(playerSelection, computerSelection);
