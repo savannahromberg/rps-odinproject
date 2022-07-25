@@ -19,7 +19,7 @@ let playerSelection = prompt("Rock, paper, or scissors?").toUpperCase();
 function gameRound(playerSelection, computerSelection) {
     console.log(playerSelection, computerSelection)
 
-    for (let i = 0; i < 5; i++) {
+    // for (let i = 0; i < 5; i++) {
         // see whether if statement can be refactored into a switch
             if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
                 document.write(scissorsRock, playerWin);
@@ -36,7 +36,7 @@ function gameRound(playerSelection, computerSelection) {
             } else if (playerSelection === computerSelection) {
                 document.write(playerTie);
             }   
-    }
+    // }
 }   
 
 
