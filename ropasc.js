@@ -1,62 +1,71 @@
-// figure out how to only accept three available choices - not spelling errors, or stupid answers
-
 const choices = ["ROCK", "PAPER", "SCISSORS"];
 
-const rockPaper = "Paper covers Rock! ";
-const scissorsRock = "Rock smashes Scissors! ";
-const paperScissors = "Scissors cut Paper! ";
-const playerWin = "You win!";
-const playerLose = "You lose!";
-const playerTie = "It's a tie!"
+const rockPaper = "Paper covers Rock! <br>";
+const scissorsRock = "Rock smashes Scissors! <br>";
+const paperScissors = "Scissors cut Paper! <br>";
+const playerWin = "YOU WIN! <br>";
+const playerLose = "YOU LOSE! <br>";
+const playerTie = "It's a tie! <br>"
 
 function getComputerChoice() {
     const random = Math.floor(Math.random() * choices.length);
     return choices[random];
 }
-let computerSelection = getComputerChoice();
-let playerSelection = prompt("Rock, paper, or scissors?").toUpperCase();
 
-function gameRound(playerSelection, computerSelection) {
-    console.log(playerSelection, computerSelection)
+function gameRound() {
+    let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Rock, paper, or scissors?").toUpperCase();
 
-    // for (let i = 0; i < 5; i++) {
-        // see whether if statement can be refactored into a switch
-            if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-                document.write(scissorsRock, playerWin);
-            } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-                document.write(rockPaper, playerLose);
-            } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-                document.write(paperScissors, playerWin);
-            } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-                document.write(scissorsRock, playerLose);
-            } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-                document.write(rockPaper, playerWin);
-            } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-                document.write(paperScissors, playerLose);
-            } else if (playerSelection === computerSelection) {
-                document.write(playerTie);
-            }   
-    // }
+    document.write('You chose: ' + playerSelection + ". <br>");
+    document.write('Your opponent chose: ' + computerSelection + ". <br>");
+
+    let rock_vScissors = (playerSelection === "ROCK" && computerSelection === "SCISSORS");
+    let rock_vPaper = (playerSelection === "ROCK" && computerSelection === "PAPER");
+    let scissors_vRock = (playerSelection === "SCISSORS" && computerSelection === "ROCK");
+    let scissors_vPaper= (playerSelection === "SCISSORS" && computerSelection === "PAPER");
+    let paper_vRock = (playerSelection === "PAPER" && computerSelection === "ROCK");
+    let paper_vScissors = (playerSelection === "PAPER" && computerSelection === "SCISSORS");
+    let gameTie = (playerSelection === computerSelection);
+    let gameError = (!choices.includes(playerSelection));
+
+        if (rock_vScissors) {
+            document.write(scissorsRock, playerWin);
+        } else if (rock_vPaper) {
+            document.write(rockPaper, playerLose);
+        } else if (scissors_vPaper) {
+            document.write(paperScissors, playerWin);
+        } else if (scissors_vRock) {
+            document.write(scissorsRock, playerLose);
+        } else if (paper_vRock) {
+            document.write(rockPaper, playerWin);
+        } else if (paper_vScissors) {
+            document.write(paperScissors, playerLose);
+        } else if (gameTie) {
+            document.write(playerTie);
+        } else if (gameError) {
+            document.write("Error: Invalid input. Please refresh and try again.<br>")
+        }  
+
+                // see whether if statements can be refactored into switches
+        // if (gameCounter === 1) {
+        //     document.write("Round 1");
+        // } else if (gameCounter === 2) {
+        //     document.write("Round 2");
+        // } else if (gameCounter === 3) {
+        //     document.write("Round 3");
+        // } else if (gameCounter === 4) {
+        // document.write("Round 4");
+        // } else if (gameCounter === 5) {
+        //     document.write("Round 5"); 
+        // }
+
 }   
 
+function game() {
+    for (let gameCounter = 1; gameCounter < 6; gameCounter++) {
+        console.log("Game counter: " + gameCounter);
+        setTimeout(gameRound, 2*1000);
+    }
+}
 
-// //counter for computer wins
-// function compWinCounter() {
-//     let computerWins = 0;
-//     for (let i = 0; i < 5; i++) {
-//     }
-// }
-
-
-document.write('You chose: ' + playerSelection + '. ', "<br>");
-document.write('Your opponent chose: ' + computerSelection + '. ', "<br>");
-
-
-// function game() {
-//     for (let i = 0; i < 5; i++) {
-
-//     }
-// }
-// game();
-
-gameRound(playerSelection, computerSelection);
+game();

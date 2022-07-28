@@ -1,0 +1,27 @@
+// switch (playerSelection, computerSelection) {
+//     case (playerSelection === "ROCK" && computerSelection === "SCISSORS"):
+//         document.write(scissorsRock, playerWin);
+//         break;
+//     case (playerSelection === "ROCK" && computerSelection === "PAPER"):
+//         document.write(rockPaper, playerLose);
+//         break;
+//     case (playerSelection === "SCISSORS" && computerSelection === "PAPER"):
+//         document.write(paperScissors, playerWin);
+//         break;
+//     case (playerSelection === "SCISSORS" && computerSelection === "ROCK"):
+//         document.write(scissorsRock, playerLose);
+//         break;
+//     case (playerSelection === "PAPER" && computerSelection === "ROCK"):
+//         document.write(rockPaper, playerWin);
+//         break;
+//     case (playerSelection === "PAPER" && computerSelection === "SCISSORS"):
+//         document.write(paperScissors, playerLose);
+//         break;
+//     case (playerSelection === computerSelection):
+//         document.write(playerTie);
+//         break;
+//     default:
+//         document.write(errorMessage);
+// }
+
+// // const errorMessage = "It looks like there was a problem. \nPerhaps there was a typo, or you entered an unacceptable choice. \nRefresh the page and try again."
