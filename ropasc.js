@@ -10,7 +10,24 @@ const playerTie = "It's a tie! <br>"
 function getComputerChoice() {
     const random = Math.floor(Math.random() * choices.length);
     return choices[random];
-}
+};
+
+const btn_Rock = document.querySelector('#btn');
+// btn_Rock.addEventListener('click', () => {
+//     document.write("You chose ROCK");
+// });
+
+const btn_Paper = document.querySelector('#btn');
+// btn_Paper.addEventListener('click', () => {
+//     document.write("You chose PAPER");
+// });
+
+const btn_Scissors = document.querySelector('#btn');
+// btn_Scissors.addEventListener('click', () => {
+//     document.write("You chose SCISSORS");
+// });
+
+console.log("Button values: ", btn_Rock, btn_Paper, btn_Scissors);
 
 function gameRound() {
     let computerSelection = getComputerChoice();
@@ -45,27 +62,13 @@ function gameRound() {
         } else if (gameError) {
             document.write("Error: Invalid input. Please refresh and try again.<br>")
         }  
-
-                // see whether if statements can be refactored into switches
-        // if (gameCounter === 1) {
-        //     document.write("Round 1");
-        // } else if (gameCounter === 2) {
-        //     document.write("Round 2");
-        // } else if (gameCounter === 3) {
-        //     document.write("Round 3");
-        // } else if (gameCounter === 4) {
-        // document.write("Round 4");
-        // } else if (gameCounter === 5) {
-        //     document.write("Round 5"); 
-        // }
-
-}   
+}; 
 
 function game() {
     for (let gameCounter = 1; gameCounter < 6; gameCounter++) {
         console.log("Game counter: " + gameCounter);
         setTimeout(gameRound, 2*1000);
     }
-}
+};
 
 game();
