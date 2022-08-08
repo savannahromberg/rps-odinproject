@@ -1,32 +1,17 @@
+const rockButton = document.querySelector('#rockbutton');
+rockButton.addEventListener('click', () => {
+    alert("You chose ROCK");
+});
 
-function alertFunction() {
-    alert("You chose: " + "");
-  }
+const paperButton = document.querySelector('#paperbutton');
+paperButton.addEventListener('click', () => {
+    alert("You chose PAPER");
+});
 
-
-const rockButton = document.getElementById('rockbutton');
-const paperButton = document.getElementById('paperbutton');
-const scissorsButton = document.getElementById('scissorsbutton');
+const scissorsButton = document.querySelector('#scissorsbutton');
+scissorsButton.addEventListener('click', () => {
+    alert("You chose SCISSORS");
+});
 
 console.log(rockButton, paperButton, scissorsButton)
 
-rockButton.addEventListener('click', alertFunction);
-paperButton.addEventListener('click', alertFunction);
-scissorsButton.addEventListener('click', alertFunction);
-
-
-
-
-
-
-
-
-
-// btn.addEventListener('click', function (e) {
-//     console.log(e);
-//   });
-// const btn = document.createElement('#btn');
-// document.querySelector('#btn');
-// btn.addEventListener('click', () => {
-//     alert("You made an alert button.");
-// });
