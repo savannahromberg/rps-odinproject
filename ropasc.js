@@ -12,23 +12,6 @@ function getComputerChoice() {
     return choices[random];
 };
 
-const btn_Rock = document.querySelector('#btn');
-// btn_Rock.addEventListener('click', () => {
-//     document.write("You chose ROCK");
-// });
-
-const btn_Paper = document.querySelector('#btn');
-// btn_Paper.addEventListener('click', () => {
-//     document.write("You chose PAPER");
-// });
-
-const btn_Scissors = document.querySelector('#btn');
-// btn_Scissors.addEventListener('click', () => {
-//     document.write("You chose SCISSORS");
-// });
-
-console.log("Button values: ", btn_Rock, btn_Paper, btn_Scissors);
-
 function gameRound() {
     let computerSelection = getComputerChoice();
     let playerSelection = prompt("Rock, paper, or scissors?").toUpperCase();
